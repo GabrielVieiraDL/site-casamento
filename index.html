@@ -21,13 +21,17 @@
             --text-light: #5A4A42;
         }
 
-        body {
+        html, body {
             margin: 0;
             padding: 0;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        body {
             background-color: var(--bg-color);
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
-            overflow-x: hidden;
             position: relative;
         }
 
@@ -427,21 +431,30 @@
         }
 
         @media (max-width: 600px) {
-            .container { padding: 30px 10px; }
+            .container { padding: 30px 15px; width: 100%; box-sizing: border-box; overflow-x: hidden; }
             h1 { font-size: 2rem; letter-spacing: 2px; }
             .e-ampersand { font-size: 2.5rem; margin: -10px 0; }
-            .names-frame { padding: 20px 15px; width: 85%; box-sizing: border-box; }
-            .intro-text, .pix-text { font-size: 0.95rem; padding: 0 10px; }
-            .location-section { margin: 30px 5px; padding: 15px 10px; }
+            .names-frame { padding: 20px 15px; width: 90%; box-sizing: border-box; }
+            .intro-text, .pix-text { font-size: 0.95rem; padding: 0; box-sizing: border-box; }
+            .location-section { margin: 30px 0; padding: 20px 15px; box-sizing: border-box; width: 100%; }
             .location-details { font-size: 0.95rem; }
             .location-details .date { font-size: 1.1rem; }
-            .pix-section { margin: 30px 5px; padding: 20px 10px; }
+            .pix-section { margin: 30px 0; padding: 20px 15px; box-sizing: border-box; width: 100%; }
             .lista-presentes {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 15px;
-                padding: 0 10px;
+                padding: 0;
+                width: 100%;
+                box-sizing: border-box;
             }
-            .item-presente { padding: 15px; }
+            .item-presente { 
+                padding: 15px; 
+                width: 100%;
+                max-width: 320px;
+                box-sizing: border-box;
+            }
             .item-presente span { font-size: 1rem; }
         }
     </style>
@@ -532,7 +545,7 @@
 
         <!-- Frase Final -->
         <div style="text-align: center; margin-top: 50px; margin-bottom: 20px; padding: 0 15px;">
-            <p style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--wine-dark); background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(5px); padding: 15px 25px; border-radius: 30px; border: 1px solid rgba(197, 155, 95, 0.4); display: inline-block; font-weight: 600; letter-spacing: 0.5px; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <p style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--wine-dark); background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(5px); padding: 15px 25px; border-radius: 30px; border: 1px solid rgba(197, 155, 95, 0.4); display: inline-block; font-weight: 600; letter-spacing: 0.5px; line-height: 1.4; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 100%; box-sizing: border-box;">
                 <span style="font-size: 1rem; color: var(--gold);">✦</span> Sua presença é o nosso maior presente. <span style="font-size: 1rem; color: var(--gold);">✦</span>
             </p>
         </div>
