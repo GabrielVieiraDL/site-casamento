@@ -290,7 +290,7 @@
 
         .item-presente {
             background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(197, 155, 95, 0.4);
+            border: 1.5px solid var(--gold);
             border-radius: 8px;
             padding: 20px;
             display: flex;
@@ -300,6 +300,7 @@
             gap: 15px;
             transition: all 0.4s ease;
             backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(197, 155, 95, 0.15);
         }
 
         .item-presente:hover {
@@ -426,19 +427,22 @@
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .e-ampersand { font-size: 3rem; }
-            .names-frame { padding: 30px 20px; }
+            .container { padding: 30px 10px; }
+            h1 { font-size: 2rem; letter-spacing: 2px; }
+            .e-ampersand { font-size: 2.5rem; margin: -10px 0; }
+            .names-frame { padding: 20px 15px; width: 85%; box-sizing: border-box; }
+            .intro-text, .pix-text { font-size: 0.95rem; padding: 0 10px; }
+            .location-section { margin: 30px 5px; padding: 15px 10px; }
+            .location-details { font-size: 0.95rem; }
+            .location-details .date { font-size: 1.1rem; }
+            .pix-section { margin: 30px 5px; padding: 20px 10px; }
             .lista-presentes {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(200px, 300px));
-            justify-content: center;
-            gap: 20px;
-            padding: 0;
-            list-style: none;
-            margin-bottom: 50px;
-        }
-            .location-section { margin: 30px 10px; padding: 20px; }
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 10px;
+            }
+            .item-presente { padding: 15px; }
+            .item-presente span { font-size: 1rem; }
         }
     </style>
 </head>
@@ -626,12 +630,12 @@
             // 2. Descubra os IDs (entry.XXXX) no código fonte do formulário
             // 3. Descomente o código abaixo e cole seus dados
             
-            
-            const urlFormulario = "https://docs.google.com/forms/d/e/1FAIpQLScxIYpeHhSHBG27r87htJs942iqPY2YyC8ZA5iX3y16fP8uRQ/formResponse";
+            /*
+            const urlFormulario = "SUA_URL_DO_FORMS_TERMINANDO_EM_formResponse";
             const formData = new FormData();
-            formData.append("entry.1648088710", nome);
-            formData.append("entry.1057328643", itemSelecionadoNome);
-            formData.append("entry.1154709095", mensagem);
+            formData.append("entry.ID_DO_NOME", nome);
+            formData.append("entry.ID_DO_PRESENTE", itemSelecionadoNome);
+            formData.append("entry.ID_DA_MENSAGEM", mensagem);
 
             fetch(urlFormulario, {
                 method: "POST",
@@ -640,10 +644,10 @@
             }).then(() => {
                 console.log("Enviado com sucesso!");
             }).catch(error => console.error(error));
-            
+            */
             // ====================================================================
 
-            alert(`Obrigado, ${nome}! Nós agradecemos o carinho!`);
+            alert(`Obrigado, ${nome}! Kethlen e Giovana agradecem o carinho!`);
             
             // Animação para sumir da lista
             elementoSelecionado.classList.add('comprado');
